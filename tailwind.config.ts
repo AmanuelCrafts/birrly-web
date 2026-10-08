@@ -21,21 +21,16 @@ const config: Config = {
           900: "#4C1D95",
         },
         ink: {
-          950: "#0B0817",
-          900: "#14102A",
-          800: "#1E1840",
-          700: "#2A2350",
-          600: "#3B3470",
+          950: "#0A0A0A",
+          900: "#141414",
+          800: "#1F1F1F",
+          700: "#2A2A2A",
+          600: "#3A3A3A",
         },
         gold: {
           400: "#FFD900",
           500: "#FFC800",
           600: "#E6B400",
-        },
-        surface: {
-          DEFAULT: "#14102A",
-          light: "#1E1840",
-          dark: "#0B0817",
         },
       },
       fontFamily: {
@@ -43,32 +38,34 @@ const config: Config = {
         mono: ["var(--font-geist-mono)", "monospace"],
       },
       animation: {
-        "fade-in": "fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both",
-        "slide-up": "slideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both",
-        "pop-in": "popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "fade-in": "fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "slide-up": "slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "pop-in": "popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both",
         "bounce-subtle": "bounceSubtle 2s ease-in-out infinite",
         "pulse-glow": "pulseGlow 2s ease-in-out infinite",
         shimmer: "shimmer 2.5s linear infinite",
         "progress-fill": "progressFill 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
         "dot-pulse": "dotPulse 1.5s ease-in-out infinite",
+        "celebrate": "celebrate 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+        "float": "float 3s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
-          from: { opacity: "0", transform: "translateY(12px)" },
+          from: { opacity: "0", transform: "translateY(8px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         slideUp: {
-          from: { opacity: "0", transform: "translateY(20px)" },
+          from: { opacity: "0", transform: "translateY(16px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         popIn: {
-          "0%": { opacity: "0", transform: "scale(0.9)" },
-          "50%": { transform: "scale(1.02)" },
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "50%": { transform: "scale(1.01)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         bounceSubtle: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-4px)" },
+          "50%": { transform: "translateY(-3px)" },
         },
         pulseGlow: {
           "0%, 100%": { opacity: "0.6" },
@@ -84,6 +81,17 @@ const config: Config = {
         dotPulse: {
           "0%, 100%": { opacity: "1", transform: "scale(1)" },
           "50%": { opacity: "0.5", transform: "scale(0.8)" },
+        },
+        celebrate: {
+          "0%": { transform: "scale(1)" },
+          "25%": { transform: "scale(1.1)" },
+          "50%": { transform: "scale(0.95)" },
+          "75%": { transform: "scale(1.05)" },
+          "100%": { transform: "scale(1)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-4px)" },
         },
       },
     },

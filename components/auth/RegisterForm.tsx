@@ -72,18 +72,20 @@ export function RegisterForm() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-[38px] text-xs font-bold text-white/40 hover:text-white/60 transition-colors cursor-pointer"
+            className="absolute right-3 top-[42px] text-[10px] font-black uppercase tracking-wider text-white/40 hover:text-white/60 transition-colors cursor-pointer"
           >
             {showPassword ? "HIDE" : "SHOW"}
           </button>
         </div>
 
-        <p className="text-xs text-white/30">
+        <p className="text-xs font-medium text-white/30">
           Must be at least 8 characters
         </p>
 
         {error && (
-          <p className="text-sm font-semibold text-red-400">{error}</p>
+          <p className="rounded-lg border-2 border-red-500/30 bg-red-500/10 px-3 py-2 text-sm font-bold text-red-400">
+            {error}
+          </p>
         )}
 
         <Button type="submit" isLoading={isLoading} className="w-full" size="lg">

@@ -3,26 +3,28 @@
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost" | "danger";
+  variant?: "primary" | "secondary" | "ghost" | "danger" | "gold";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
 }
 
 const variantClasses = {
   primary:
-    "bg-brand-500 text-white hover:bg-brand-400 active:bg-brand-600 shadow-[0_4px_14px_rgb(139_92_246/0.3)]",
+    "bg-brand-500 text-ink-950 border-2 border-black shadow-[4px_4px_0px_#000000] hover:bg-brand-400 hover:shadow-[3px_3px_0px_#000000] active:shadow-none",
   secondary:
-    "bg-ink-700 text-white hover:bg-ink-600 active:bg-ink-800 border border-white/10",
+    "bg-ink-800 text-white border-2 border-black shadow-[4px_4px_0px_#000000] hover:bg-ink-700 hover:shadow-[3px_3px_0px_#000000] active:shadow-none",
   ghost:
-    "bg-transparent text-white/70 hover:text-white hover:bg-white/5",
+    "bg-transparent text-white/70 border-2 border-transparent shadow-none hover:text-white hover:bg-white/5 active:scale-[0.98]",
   danger:
-    "bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20",
+    "bg-red-500 text-white border-2 border-black shadow-[4px_4px_0px_#000000] hover:bg-red-400 hover:shadow-[3px_3px_0px_#000000] active:shadow-none",
+  gold:
+    "bg-gold-500 text-ink-950 border-2 border-black shadow-[4px_4px_0px_#000000] hover:bg-gold-400 hover:shadow-[3px_3px_0px_#000000] active:shadow-none",
 };
 
 const sizeClasses = {
-  sm: "h-9 px-4 text-xs",
-  md: "h-11 px-5 text-sm",
-  lg: "h-13 px-7 text-base",
+  sm: "h-10 px-5 text-xs",
+  md: "h-12 px-6 text-sm",
+  lg: "h-14 px-8 text-base",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -31,10 +33,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={`
-          inline-flex items-center justify-center gap-2 rounded-xl font-bold
-          transition-all duration-150 cursor-pointer select-none
+          inline-flex items-center justify-center gap-2 rounded-xl font-black uppercase tracking-wide
+          transition-all duration-100 cursor-pointer select-none
           disabled:opacity-40 disabled:pointer-events-none
-          active:scale-[0.98]
+          active:translate-x-[3px] active:translate-y-[3px]
           ${variantClasses[variant]}
           ${sizeClasses[size]}
           ${className}

@@ -29,7 +29,7 @@ export function ProfileCard({ user, hasVip, vipName }: ProfileCardProps) {
   return (
     <Card variant="glow" className="animate-fade-in">
       <div className="flex flex-col items-center text-center">
-        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-500/10 text-3xl font-black text-brand-400 ring-2 ring-brand-500/20">
+        <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-black bg-brand-500/10 text-3xl font-black text-brand-400 shadow-[4px_4px_0px_#000000]">
           {user.username.charAt(0).toUpperCase()}
         </div>
         <h2 className="mt-3 text-xl font-black text-white">{user.username}</h2>
@@ -42,14 +42,14 @@ export function ProfileCard({ user, hasVip, vipName }: ProfileCardProps) {
         </div>
       </div>
 
-      <div className="mt-5 space-y-3 border-t border-white/[0.04] pt-5">
+      <div className="mt-5 space-y-3 border-t-2 border-black/20 pt-5">
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-white/30">Member since</span>
-          <span className="text-sm font-bold text-white">{memberSince}</span>
+          <span className="text-sm font-black text-white">{memberSince}</span>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-white/30">Current VIP</span>
-          <span className="text-sm font-bold text-white">
+          <span className="text-sm font-black text-white">
             {hasVip && vipName ? vipName : "None"}
           </span>
         </div>

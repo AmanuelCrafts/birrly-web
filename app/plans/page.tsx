@@ -42,7 +42,7 @@ export default async function PlansPage() {
     <div className="mx-auto min-h-[100dvh] w-full max-w-md">
       <main className="space-y-4 px-4 pb-28 pt-5">
         <div className="animate-fade-in">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/25">
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25">
             Choose your plan
           </p>
           <h1 className="mt-1 text-2xl font-black tracking-tight text-white">

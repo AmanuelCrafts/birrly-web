@@ -16,7 +16,7 @@ export default async function WalletPage() {
     <div className="mx-auto min-h-[100dvh] w-full max-w-md">
       <main className="space-y-4 px-4 pb-28 pt-5">
         <div className="animate-fade-in">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/25">
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25">
             Your finances
           </p>
           <h1 className="mt-1 text-2xl font-black tracking-tight text-white">
@@ -34,7 +34,7 @@ export default async function WalletPage() {
               Balance, transactions, deposits, and withdrawals — all in one place.
             </p>
             <div className="mt-5">
-              <span className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-xs font-bold text-white/30">
+              <span className="rounded-lg border-2 border-black bg-white/5 px-3 py-1.5 text-xs font-black text-white/30 shadow-[2px_2px_0px_#000000]">
                 Coming soon
               </span>
             </div>
@@ -44,13 +44,13 @@ export default async function WalletPage() {
         <div className="grid grid-cols-2 gap-3">
           <Card variant="subtle" className="animate-fade-in p-4">
             <span className="text-2xl">📥</span>
-            <p className="mt-2 text-xs font-bold text-white/50">Deposits</p>
-            <p className="text-[10px] text-white/25">Coming soon</p>
+            <p className="mt-2 text-xs font-black text-white/50">Deposits</p>
+            <p className="text-[10px] font-medium text-white/25">Coming soon</p>
           </Card>
           <Card variant="subtle" className="animate-fade-in p-4">
             <span className="text-2xl">📤</span>
-            <p className="mt-2 text-xs font-bold text-white/50">Withdrawals</p>
-            <p className="text-[10px] text-white/25">Coming soon</p>
+            <p className="mt-2 text-xs font-black text-white/50">Withdrawals</p>
+            <p className="text-[10px] font-medium text-white/25">Coming soon</p>
           </Card>
         </div>
       </main>

@@ -15,14 +15,14 @@ export default async function RegisterPage() {
     <div className="flex min-h-[100dvh] flex-col items-center justify-center px-6 py-12">
       <div className="w-full max-w-sm">
         <div className="mb-10 text-center">
-          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-500/10 text-3xl ring-1 ring-brand-500/20">
+          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-black bg-brand-500 text-2xl shadow-[4px_4px_0px_#000000]">
             💎
           </div>
           <h1 className="text-3xl font-black tracking-tight text-white">
             BIRRLY
           </h1>
           <p className="mt-2 text-sm font-medium text-white/30">
-            Build your streak. Build your rewards.
+            Start building your progress.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default async function RegisterPage() {
           Already have an account?{" "}
           <a
             href="/login"
-            className="font-bold text-brand-400 hover:text-brand-300 transition-colors"
+            className="font-black text-brand-400 hover:text-brand-300 transition-colors"
           >
             Log in
           </a>

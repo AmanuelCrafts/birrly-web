@@ -46,7 +46,7 @@ export default async function HomePage() {
     <div className="mx-auto min-h-[100dvh] w-full max-w-md">
       <main className="space-y-3 px-4 pb-28 pt-5">
         <div className="animate-fade-in">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/25">
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25">
             Welcome back
           </p>
           <h1 className="mt-1 text-2xl font-black tracking-tight text-white">
@@ -78,10 +78,10 @@ export default async function HomePage() {
 
         <div className="space-y-3 pt-1">
           <div className="flex items-center justify-between px-1">
-            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/30">
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white/30">
               VIP Plans
             </h2>
-            <span className="text-[10px] font-bold text-white/20">
+            <span className="text-[10px] font-black text-white/20">
               {formattedPlans.length} plans
             </span>
           </div>
