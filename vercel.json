@@ -1,10 +1,4 @@
 {
   "$schema": "https://vercel.com/schema.json",
-  "version": 2,
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": ".next",
-  "framework": "nextjs",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "framework": "nextjs"
 }
