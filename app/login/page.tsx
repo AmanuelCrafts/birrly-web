@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth/session";
 import { LoginForm } from "@/components/auth/LoginForm";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
-import { useLanguage } from "@/context/LanguageContext";
+
 
 export const dynamic = "force-dynamic";
 

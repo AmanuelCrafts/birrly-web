@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth/session";
 import { RegisterForm } from "@/components/auth/RegisterForm";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+// LanguageSwitcher is a client component, safe to use in server pages
 
 export const dynamic = "force-dynamic";
 

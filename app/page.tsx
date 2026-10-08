@@ -9,7 +9,7 @@ import { VipPlanList } from "@/components/vip/VipPlanList";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { connectToDatabase } from "@/lib/mongodb";
 import { VIPPlan } from "@/models/VIPPlan";
-import { useLanguage } from "@/context/LanguageContext";
+
 
 export const dynamic = "force-dynamic";
 

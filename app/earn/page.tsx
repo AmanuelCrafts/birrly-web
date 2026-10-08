@@ -3,7 +3,7 @@ import { getCurrentUser } from "@/lib/auth/session";
 import { BottomNav } from "@/components/navigation/BottomNav";
 import { Card } from "@/components/ui/Card";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
-import { useLanguage } from "@/context/LanguageContext";
+
 
 export const dynamic = "force-dynamic";
 
