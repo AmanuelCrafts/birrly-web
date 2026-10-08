@@ -2,17 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
 
 const navItems = [
-  { href: "/", label: "Home", icon: "🏠" },
-  { href: "/earn", label: "Earn", icon: "🔥" },
-  { href: "/wallet", label: "Wallet", icon: "💰" },
-  { href: "/plans", label: "Plans", icon: "🎯" },
-  { href: "/profile", label: "Profile", icon: "👤" },
+  { href: "/", labelKey: "home" as const, icon: "🏠" },
+  { href: "/earn", labelKey: "earn" as const, icon: "🔥" },
+  { href: "/wallet", labelKey: "wallet" as const, icon: "💰" },
+  { href: "/plans", labelKey: "plans" as const, icon: "🎯" },
+  { href: "/profile", labelKey: "profile" as const, icon: "👤" },
 ];
 
 export function BottomNav() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50">
@@ -37,7 +39,7 @@ export function BottomNav() {
                 >
                   <span className="text-lg leading-none">{item.icon}</span>
                   <span className="text-[9px] font-black uppercase tracking-wider">
-                    {item.label}
+                    {t(item.labelKey)}
                   </span>
                 </Link>
               );

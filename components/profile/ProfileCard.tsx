@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface ProfileCardProps {
   user: {
@@ -17,6 +18,7 @@ interface ProfileCardProps {
 
 export function ProfileCard({ user, hasVip, vipName }: ProfileCardProps) {
   const router = useRouter();
+  const { t } = useLanguage();
 
   async function handleLogout() {
     await fetch("/api/auth/logout", { method: "POST" });
@@ -37,20 +39,20 @@ export function ProfileCard({ user, hasVip, vipName }: ProfileCardProps) {
 
         <div className="mt-3">
           <Badge variant={user.status === "ACTIVE" ? "success" : "danger"}>
-            {user.status}
+            {user.status === "ACTIVE" ? t("active") : t("suspended")}
           </Badge>
         </div>
       </div>
 
       <div className="mt-5 space-y-3 border-t-2 border-black/20 pt-5">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-white/30">Member since</span>
+          <span className="text-xs font-medium text-white/30">{t("memberSince")}</span>
           <span className="text-sm font-black text-white">{memberSince}</span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-white/30">Current VIP</span>
+          <span className="text-xs font-medium text-white/30">{t("currentVip")}</span>
           <span className="text-sm font-black text-white">
-            {hasVip && vipName ? vipName : "None"}
+            {hasVip && vipName ? vipName : t("none")}
           </span>
         </div>
       </div>
@@ -60,7 +62,7 @@ export function ProfileCard({ user, hasVip, vipName }: ProfileCardProps) {
         onClick={handleLogout}
         className="mt-5 w-full"
       >
-        Log Out
+        {t("logout")}
       </Button>
     </Card>
   );

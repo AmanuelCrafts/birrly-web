@@ -5,9 +5,11 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { AuthLoadingOverlay } from "./AuthLoadingOverlay";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function RegisterForm() {
   const router = useRouter();
+  const { t } = useLanguage();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -32,11 +34,11 @@ export function RegisterForm() {
         router.push("/");
         router.refresh();
       } else {
-        setError(data.error ?? "Something went wrong. Please try again.");
+        setError(data.error ?? t("somethingWrong"));
         setIsLoading(false);
       }
     } catch {
-      setError("Something went wrong. Please try again.");
+      setError(t("somethingWrong"));
       setIsLoading(false);
     }
   }
@@ -46,11 +48,11 @@ export function RegisterForm() {
       <AuthLoadingOverlay isLoading={isLoading} />
       <form onSubmit={handleSubmit} className="space-y-5">
         <Input
-          label="Username"
+          label={t("username")}
           name="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Choose a username"
+          placeholder={t("username")}
           autoComplete="username"
           required
           minLength={3}
@@ -59,12 +61,12 @@ export function RegisterForm() {
 
         <div className="relative">
           <Input
-            label="Password"
+            label={t("password")}
             name="password"
             type={showPassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Create a password"
+            placeholder={t("password")}
             autoComplete="new-password"
             required
             minLength={8}
@@ -88,8 +90,8 @@ export function RegisterForm() {
           </p>
         )}
 
-        <Button type="submit" isLoading={isLoading} className="w-full p-6" size="lg">
-          Create Account
+        <Button type="submit" isLoading={isLoading} className="w-full py-5" size="lg">
+          {t("register")}
         </Button>
       </form>
     </>

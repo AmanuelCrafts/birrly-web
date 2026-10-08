@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth/session";
 import { BottomNav } from "@/components/navigation/BottomNav";
 import { ProfileCard } from "@/components/profile/ProfileCard";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { connectToDatabase } from "@/lib/mongodb";
 import { VIPPlan } from "@/models/VIPPlan";
 
@@ -28,7 +29,10 @@ export default async function ProfilePage() {
 
   return (
     <div className="mx-auto min-h-[100dvh] w-full max-w-md">
-      <main className="space-y-4 px-4 pb-28 pt-5">
+      <div className="flex justify-end px-4 pt-4">
+        <LanguageSwitcher />
+      </div>
+      <main className="space-y-4 px-4 pb-28 pt-3">
         <div className="animate-fade-in">
           <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25">
             Your account

@@ -6,8 +6,10 @@ import { BalanceCard } from "@/components/home/BalanceCard";
 import { StreakCard } from "@/components/home/StreakCard";
 import { DailyTaskCard } from "@/components/home/DailyTaskCard";
 import { VipPlanList } from "@/components/vip/VipPlanList";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { connectToDatabase } from "@/lib/mongodb";
 import { VIPPlan } from "@/models/VIPPlan";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const dynamic = "force-dynamic";
 
@@ -44,7 +46,10 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto min-h-[100dvh] w-full max-w-md">
-      <main className="space-y-3 px-4 pb-28 pt-5">
+      <div className="flex justify-end px-4 pt-4">
+        <LanguageSwitcher />
+      </div>
+      <main className="space-y-3 px-4 pb-28 pt-3">
         <div className="animate-fade-in">
           <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/25">
             Welcome back

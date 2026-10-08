@@ -1,6 +1,8 @@
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth/session";
 import { LoginForm } from "@/components/auth/LoginForm";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +16,9 @@ export default async function LoginPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col items-center justify-center px-6 py-12">
       <div className="w-full max-w-sm">
+        <div className="mb-4 flex justify-center">
+          <LanguageSwitcher />
+        </div>
         <div className="mb-10 text-center">
           <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-black bg-brand-500 text-2xl shadow-[4px_4px_0px_#000000]">
             💎

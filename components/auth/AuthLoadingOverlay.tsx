@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface AuthLoadingOverlayProps {
   isLoading: boolean;
 }
 
 export function AuthLoadingOverlay({ isLoading }: AuthLoadingOverlayProps) {
+  const { t } = useLanguage();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ export function AuthLoadingOverlay({ isLoading }: AuthLoadingOverlayProps) {
       <div className="flex flex-col items-center gap-4">
         <div className="h-12 w-12 animate-spin rounded-full border-4 border-brand-500 border-t-transparent" />
         <p className="text-sm font-black uppercase tracking-wider text-white/60">
-          Signing you in...
+          {t("signingIn")}
         </p>
       </div>
     </div>
