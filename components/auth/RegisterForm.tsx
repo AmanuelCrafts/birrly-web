@@ -88,7 +88,7 @@ export function RegisterForm() {
           </p>
         )}
 
-        <Button type="submit" isLoading={isLoading} className="w-full" size="lg">
+        <Button type="submit" isLoading={isLoading} className="w-full p-6" size="lg">
           Create Account
         </Button>
       </form>
