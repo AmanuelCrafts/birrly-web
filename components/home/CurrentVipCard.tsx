@@ -15,21 +15,24 @@ interface CurrentVipCardProps {
 export function CurrentVipCard({ hasVip, vip }: CurrentVipCardProps) {
   if (!hasVip || !vip) {
     return (
-      <Card variant="glow" className="animate-fade-in">
-        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-          Current VIP
-        </p>
-        <div className="mt-4 flex items-center gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-3xl">
-            💎
-          </div>
-          <div>
-            <h2 className="text-xl font-black tracking-tight text-white/60">
-              No Active VIP
-            </h2>
-            <p className="text-sm font-semibold text-white/30">
-              Choose a plan when you&apos;re ready to get started.
-            </p>
+      <Card variant="glow" className="animate-fade-in relative overflow-hidden">
+        <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-brand-500/10 blur-3xl" />
+        <div className="relative">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+            Current VIP
+          </p>
+          <div className="mt-4 flex items-center gap-4">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.03] text-3xl">
+              💎
+            </div>
+            <div>
+              <h2 className="text-xl font-black tracking-tight text-white/50">
+                No Active VIP
+              </h2>
+              <p className="text-sm font-medium text-white/25">
+                Choose a plan when you&apos;re ready to get started.
+              </p>
+            </div>
           </div>
         </div>
       </Card>
@@ -38,43 +41,43 @@ export function CurrentVipCard({ hasVip, vip }: CurrentVipCardProps) {
 
   return (
     <Card variant="premium" className="animate-fade-in relative overflow-hidden">
-      <div className="pointer-events-none absolute -top-20 -right-20 h-48 w-48 rounded-full bg-brand-500/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-brand-700/20 blur-3xl" />
+      <div className="pointer-events-none absolute -top-20 -right-20 h-48 w-48 rounded-full bg-brand-500/15 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-brand-700/10 blur-3xl" />
 
       <div className="relative">
         <div className="flex items-center justify-between">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-300/80">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-300/60">
             Your Current VIP
           </p>
           <Badge variant="success">Active</Badge>
         </div>
 
         <div className="mt-4 flex items-center gap-4">
-          <div className="animate-bounce-subtle flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-3xl shadow-lg">
+          <div className="animate-bounce-subtle flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.06] text-3xl shadow-lg">
             💎
           </div>
           <div>
             <h2 className="text-3xl font-black tracking-tight text-white">
               {vip.name}
             </h2>
-            <p className="text-sm font-semibold text-brand-300/80">
+            <p className="text-sm font-medium text-brand-300/60">
               {vip.depositAmount.toLocaleString()} ETB deposit
             </p>
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl bg-white/5 px-4 py-3">
-          <p className="text-[10px] font-bold uppercase tracking-wider text-white/40">
+        <div className="mt-4 rounded-xl bg-white/[0.03] px-4 py-3">
+          <p className="text-[10px] font-bold uppercase tracking-wider text-white/30">
             Daily Income
           </p>
           <p className="mt-0.5 text-2xl font-black text-white">
             +{vip.dailyIncome.toLocaleString()}{" "}
-            <span className="text-sm font-bold text-brand-300">ETB / day</span>
+            <span className="text-sm font-bold text-brand-300/60">ETB / day</span>
           </p>
         </div>
 
         <div className="mt-3 flex items-center gap-2">
-          <span className="rounded-md bg-white/5 px-2 py-1 text-[10px] font-bold text-white/50">
+          <span className="rounded-md bg-white/[0.03] px-2 py-1 text-[10px] font-bold text-white/40">
             🎯 {vip.dailyTasksRequired} daily tasks
           </span>
         </div>

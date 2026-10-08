@@ -40,13 +40,16 @@ export default async function PlansPage() {
 
   return (
     <div className="mx-auto min-h-[100dvh] w-full max-w-md">
-      <main className="space-y-4 px-4 pb-28 pt-6">
+      <main className="space-y-4 px-4 pb-28 pt-5">
         <div className="animate-fade-in">
-          <h1 className="text-2xl font-black uppercase tracking-tight text-white">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/25">
+            Choose your plan
+          </p>
+          <h1 className="mt-1 text-2xl font-black tracking-tight text-white">
             VIP Plans
           </h1>
-          <p className="mt-1 text-sm font-semibold text-white/40">
-            Choose the plan that fits your goals.
+          <p className="mt-1 text-sm font-medium text-white/30">
+            Level up your routine.
           </p>
         </div>
 

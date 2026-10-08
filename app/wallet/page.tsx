@@ -14,22 +14,45 @@ export default async function WalletPage() {
 
   return (
     <div className="mx-auto min-h-[100dvh] w-full max-w-md">
-      <main className="space-y-4 px-4 pb-28 pt-6">
-        <h1 className="animate-fade-in text-2xl font-black uppercase tracking-tight text-white">
-          Wallet
-        </h1>
+      <main className="space-y-4 px-4 pb-28 pt-5">
+        <div className="animate-fade-in">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/25">
+            Your finances
+          </p>
+          <h1 className="mt-1 text-2xl font-black tracking-tight text-white">
+            Wallet
+          </h1>
+        </div>
 
-        <Card className="animate-fade-in">
-          <div className="flex flex-col items-center py-8 text-center">
-            <span className="text-5xl">💰</span>
-            <h2 className="mt-4 text-xl font-black text-white">
+        <Card variant="glow" className="animate-fade-in">
+          <div className="flex flex-col items-center py-10 text-center">
+            <div className="animate-bounce-subtle text-6xl">💰</div>
+            <h2 className="mt-5 text-xl font-black text-white">
               Your wallet is coming soon.
             </h2>
-            <p className="mt-1 text-sm font-semibold text-white/40">
-              Balance, transactions, deposits, and withdrawals.
+            <p className="mt-2 max-w-[240px] text-sm font-medium leading-relaxed text-white/30">
+              Balance, transactions, deposits, and withdrawals — all in one place.
             </p>
+            <div className="mt-5">
+              <span className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-1.5 text-xs font-bold text-white/30">
+                Coming soon
+              </span>
+            </div>
           </div>
         </Card>
+
+        <div className="grid grid-cols-2 gap-3">
+          <Card variant="subtle" className="animate-fade-in p-4">
+            <span className="text-2xl">📥</span>
+            <p className="mt-2 text-xs font-bold text-white/50">Deposits</p>
+            <p className="text-[10px] text-white/25">Coming soon</p>
+          </Card>
+          <Card variant="subtle" className="animate-fade-in p-4">
+            <span className="text-2xl">📤</span>
+            <p className="mt-2 text-xs font-bold text-white/50">Withdrawals</p>
+            <p className="text-[10px] text-white/25">Coming soon</p>
+          </Card>
+        </div>
       </main>
 
       <BottomNav />

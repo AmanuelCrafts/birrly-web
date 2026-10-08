@@ -44,12 +44,14 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto min-h-[100dvh] w-full max-w-md">
-      <main className="space-y-4 px-4 pb-28 pt-6">
+      <main className="space-y-3 px-4 pb-28 pt-5">
         <div className="animate-fade-in">
-          <p className="text-xs font-bold text-white/40">
-            Welcome back,{" "}
-            <span className="font-black text-white">{user.username}</span>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/25">
+            Welcome back
           </p>
+          <h1 className="mt-1 text-2xl font-black tracking-tight text-white">
+            {user.username}
+          </h1>
         </div>
 
         <CurrentVipCard
@@ -67,14 +69,22 @@ export default async function HomePage() {
           }
         />
 
-        <BalanceCard />
-        <StreakCard />
+        <div className="grid grid-cols-2 gap-3">
+          <BalanceCard />
+          <StreakCard />
+        </div>
+
         <DailyTaskCard />
 
-        <div className="space-y-3 pt-2">
-          <h2 className="px-1 text-base font-black uppercase tracking-wider text-white/80">
-            VIP Plans
-          </h2>
+        <div className="space-y-3 pt-1">
+          <div className="flex items-center justify-between px-1">
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-white/30">
+              VIP Plans
+            </h2>
+            <span className="text-[10px] font-bold text-white/20">
+              {formattedPlans.length} plans
+            </span>
+          </div>
           <VipPlanList
             plans={formattedPlans}
             currentVipLevel={currentVipPlan?.level}

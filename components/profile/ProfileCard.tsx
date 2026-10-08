@@ -27,13 +27,13 @@ export function ProfileCard({ user, hasVip, vipName }: ProfileCardProps) {
   const memberSince = new Date(user.createdAt).getFullYear();
 
   return (
-    <Card className="animate-fade-in">
+    <Card variant="glow" className="animate-fade-in">
       <div className="flex flex-col items-center text-center">
-        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-500/20 text-3xl font-black text-brand-400">
+        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-500/10 text-3xl font-black text-brand-400 ring-2 ring-brand-500/20">
           {user.username.charAt(0).toUpperCase()}
         </div>
         <h2 className="mt-3 text-xl font-black text-white">{user.username}</h2>
-        <p className="text-sm font-semibold text-white/40">@{user.username}</p>
+        <p className="text-sm font-medium text-white/30">@{user.username}</p>
 
         <div className="mt-3">
           <Badge variant={user.status === "ACTIVE" ? "success" : "danger"}>
@@ -42,13 +42,13 @@ export function ProfileCard({ user, hasVip, vipName }: ProfileCardProps) {
         </div>
       </div>
 
-      <div className="mt-5 space-y-3 border-t border-white/5 pt-5">
+      <div className="mt-5 space-y-3 border-t border-white/[0.04] pt-5">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-semibold text-white/40">Member since</span>
+          <span className="text-xs font-medium text-white/30">Member since</span>
           <span className="text-sm font-bold text-white">{memberSince}</span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-xs font-semibold text-white/40">Current VIP</span>
+          <span className="text-xs font-medium text-white/30">Current VIP</span>
           <span className="text-sm font-bold text-white">
             {hasVip && vipName ? vipName : "None"}
           </span>
