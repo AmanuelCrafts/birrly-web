@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { AuthLoadingOverlay } from "./AuthLoadingOverlay";
 
 export function LoginForm() {
   const router = useRouter();
@@ -32,53 +33,56 @@ export function LoginForm() {
         router.refresh();
       } else {
         setError(data.error ?? "Invalid username or password.");
+        setIsLoading(false);
       }
     } catch {
       setError("Something went wrong. Please try again.");
-    } finally {
       setIsLoading(false);
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <Input
-        label="Username"
-        name="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Enter your username"
-        autoComplete="username"
-        required
-      />
-
-      <div className="relative">
+    <>
+      <AuthLoadingOverlay isLoading={isLoading} />
+      <form onSubmit={handleSubmit} className="space-y-5">
         <Input
-          label="Password"
-          name="password"
-          type={showPassword ? "text" : "password"}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
-          autoComplete="current-password"
+          label="Username"
+          name="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Enter your username"
+          autoComplete="username"
           required
         />
-        <button
-          type="button"
-          onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-3 top-[38px] text-xs font-bold text-white/40 hover:text-white/60 transition-colors cursor-pointer"
-        >
-          {showPassword ? "HIDE" : "SHOW"}
-        </button>
-      </div>
 
-      {error && (
-        <p className="text-sm font-semibold text-red-400">{error}</p>
-      )}
+        <div className="relative">
+          <Input
+            label="Password"
+            name="password"
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
+            autoComplete="current-password"
+            required
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-[38px] text-xs font-bold text-white/40 hover:text-white/60 transition-colors cursor-pointer"
+          >
+            {showPassword ? "HIDE" : "SHOW"}
+          </button>
+        </div>
 
-      <Button type="submit" isLoading={isLoading} className="w-full" size="lg">
-        Log In
-      </Button>
-    </form>
+        {error && (
+          <p className="text-sm font-semibold text-red-400">{error}</p>
+        )}
+
+        <Button type="submit" isLoading={isLoading} className="w-full" size="lg">
+          Log In
+        </Button>
+      </form>
+    </>
   );
 }
